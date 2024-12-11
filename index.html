@@ -20,12 +20,12 @@
         </div>
         <div class="login-section" id="loginSection">
             <!-- Link de login redirecionando para signup.html -->
-            <a href="./signup.html" class="login-link" id="loginLink">
+            <a href="./views/signup.html" class="login-link" id="loginLink">
                 <img src="../imgs/icone Login.svg" alt="Login" id="loginIcon">
                 <span id="loginText">Sign-in/Login</span>
             </a>
             <!-- Botão de perfil para conta.html, exibido apenas se o usuário estiver logado -->
-            <a href="conta.html" id="userProfile" class="user-profile" style="display: none;">
+            <a href="./views/conta.html" id="userProfile" class="user-profile" style="display: none;">
                 <img src="../imgs/icone Login.svg" alt="User Icon">
             </a>
             <!-- Botão de logout, inicialmente escondido -->
@@ -72,7 +72,7 @@
 
     <script>
         // Quando a página index.html for acessada, armazena o tempo
-        if (window.location.pathname.includes("index.html")) {
+        if (window.location.pathname.includes("../index.html")) {
             sessionStorage.setItem("ratingPopupTime", Date.now());
         }      
     </script>
