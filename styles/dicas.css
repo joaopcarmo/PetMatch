@@ -1,0 +1,64 @@
+.main {
+  flex: 1;
+  padding: 20px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.tip-section {
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.tip-section h2 {
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.tip-section p {
+  font-size: 18px;
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  text-align: center;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.titulo {
+  font-size: 30px;
+  margin-bottom: 30px;
+  text-align: center;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+a.botao-download {
+  display: inline-block;
+  background-color: #d08b96;
+  color: white;
+  text-align: center;
+  padding: 12px 24px;
+  font-size: 16px;
+  text-decoration: none;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+a.botao-download:hover {
+  background-color: #45a049;
+  transform: scale(1.05);
+}
+
+a.botao-download:active {
+  background-color: #3e8e41;
+  transform: scale(1);
+}

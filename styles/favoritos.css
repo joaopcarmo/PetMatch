@@ -1,0 +1,178 @@
+.main {
+    flex: 1;
+    padding: 30px;
+    text-align: center;
+}
+
+.main h2 {
+    font-size: 32px;
+    color: #333;
+    font-weight: 600;
+    margin-bottom: 60px;
+}
+
+.main p {
+    color: #666;
+    font-size: 20px;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.pet-card {
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 30px 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    width: 98%;
+    position: relative; /* Para posicionar os botões de forma absoluta */
+}
+
+.pet-card img {
+    width: 240px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-right: 20px;
+}
+
+.pet-card .info {
+    flex-grow: 1;
+    text-align: left; /* Alinha todo o conteúdo à esquerda */
+    display: flex;
+    flex-direction: column; /* Empilha o conteúdo */
+    justify-content: center; /* Centraliza verticalmente */
+}
+
+.pet-card h3 {
+    font-size: 36px;
+    margin: 0 0 10px 0; /* Margem inferior para espaçamento */
+    color: #000;
+}
+
+.pet-card p {
+    font-size: 18px;
+    color: #666;
+    margin: 5px 0; /* Ajusta o espaçamento vertical entre as linhas */
+}
+
+/* Estilo para o botão "Editar" */
+.pet-card .button-edit {
+    position: absolute; /* Para alinhar no card */
+    top: 50%; /* Centraliza verticalmente no card */
+    right: 120px; /* Ajusta posição à esquerda do botão Remover */
+    transform: translateY(-50%); /* Centraliza perfeitamente */
+    background-color: #008CBA; /* Cor azul */
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-size: 18px;
+    transition: background-color 0.3s, transform 0.3s; /* Transição suave */
+    cursor: pointer; /* Muda o cursor para mãozinha */
+}
+
+.pet-card .button-edit:hover {
+    background-color: #007B9E; /* Cor mais escura no hover */
+    transform: translateY(-50%) scale(1.1); /* Aumenta o tamanho no hover */
+}
+
+/* Estilo para o botão "Remover" */
+.pet-card .button-remove {
+    position: absolute; /* Posiciona o botão fora do fluxo padrão */
+    top: 50%; /* Centraliza verticalmente no card */
+    right: 20px; /* Posiciona à direita */
+    transform: translateY(-50%); /* Ajusta para alinhar perfeitamente no meio */
+    background-color: #E90342;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-size: 18px;
+    transition: background-color 0.3s, transform 0.3s; /* Transição suave */
+    cursor: pointer; /* Muda o cursor para mãozinha */
+}
+
+.pet-card .button-remove:hover {
+    background-color: #d0023a;
+    transform: translateY(-50%) scale(1.1); /* Aumenta o tamanho do botão */
+}
+
+.footer {
+    background-color: #D496A7;
+    padding: 20px;
+    text-align: center;
+    color: #555;
+    font-weight: 400;
+}
+
+/* Responsividade */
+@media (max-width: 1200px) {
+    .pet-card {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .pet-card img {
+        width: 100%;
+        height: auto;
+    }
+
+    .pet-card .info {
+        text-align: center;
+    }
+
+    .pet-card .button-edit,
+    .pet-card .button-remove {
+        position: relative;
+        top: auto;
+        right: auto;
+        transform: none;
+        margin-top: 10px;
+        align-self: center;
+    }
+}
+
+@media (max-width: 900px) {
+    .pet-card {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .pet-card .button-edit,
+    .pet-card .button-remove {
+        margin-top: 10px;
+        align-self: center;
+    }
+}
+
+@media (max-width: 600px) {
+    .main h2 {
+        font-size: 18px;
+    }
+
+    .main p {
+        font-size: 16px;
+    }
+
+    .pet-card img {
+        max-height: 150px;
+    }
+
+    .pet-card h3 {
+        font-size: 20px;
+    }
+
+    .pet-card p {
+        font-size: 14px;
+    }
+
+    .pet-card .button-edit,
+    .pet-card .button-remove {
+        width: 100%;
+        text-align: center;
+    }
+}

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Criar Conta - PetMatch</title>
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles/global.css">
+    <link rel="stylesheet" href="../styles/login.css">
+</head>
+
+<body>
+
+    <header class="header">
+        <div class="logo-and-title">
+            <a href="menu.html">
+                <img src="../imgs/Design sem nome.svg" alt="Logo">
+            </a>
+            <h1>Petmatch</h1>
+        </div>
+    </header>
+
+    <div class="login-container">
+        <div class="login-icon">
+            <img src="../imgs/icone Login.svg" alt="User Icon">
+        </div>
+        <div id="CriarConta">
+            <h2>Criar Conta</h2>
+        </div>
+
+        <div class="signup-container">
+            <form id="signupForm">
+                <div class="input-group">
+                    <input type="text" placeholder="Nome" name="nome" id="signupName" required>
+                </div>
+                <div class="input-group">
+                    <input type="email" placeholder="Email" name="username" id="signupUsername" required>
+                </div>
+                <div class="input-group">
+                    <input type="password" placeholder="Senha" name="password" id="signupPassword" required
+                        pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$"
+                        title="A senha deve ter pelo menos 8 caracteres, incluindo uma letra maiúscula, uma letra minúscula, um número e um caractere especial.">
+                </div>
+
+                <div class="login-buttons">
+                    <button type="submit" class="signup-btn">Criar Conta</button>
+                </div>
+
+                <p></p>
+
+                <div class="login-buttons already-have-account">
+                    <a href="./login.html" style="text-decoration: none;">
+                        <button type="button" class="signup-btn" style="background-color: #f9f9f9; border: 2px solid #d496a7; border-radius: 8px; color: #d496a7; cursor: pointer; font-weight: bold; padding: 10px 20px; transition: background-color 0.3s ease;">
+                            Possui uma conta? Logue aqui!
+                        </button>
+                    </a>
+                </div>
+            </form>
+
+            <p id="signupMessage" style="color:green;"></p>
+        </div>
+    </div>
+
+    <script src="../src/auth/signup.js"></script>
+
+</body>
+<footer>
+    <div class="footer">
+        <p>&copy; 2024 PetMatch. All rights reserved.</p>
+    </div>
+</footer>
+
+</html>

@@ -1,0 +1,85 @@
+.signup-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.signup-container h2 {
+  font-size: 28px;
+  color: #333;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.input-group {
+  margin-bottom: 10px; /* Reduz o espaçamento entre inputs */
+}
+
+.input-group input {
+  width: 250px;
+  padding: 15px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  text-align: center;
+  transition: border-color 0.3s;
+}
+
+.input-group input:focus {
+  border-color: #d496a7; /* Muda a borda quando o input está focado */
+  outline: none;
+}
+
+.login-buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 0px; /* Reduz o espaço entre os botões */
+}
+
+.already-have-account {
+  margin-top: 10px; /* Aproxima o botão "Já possui uma conta?" do botão "Criar Conta" */
+  font-weight: 00;
+  border: px;
+}
+
+.signup-btn {
+  background-color: #d496a7;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 25px;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.signup-btn:hover {
+  background-color: #c38492;
+  transform: scale(1.05); /* Pequeno efeito de aumento ao passar o mouse */
+}
+
+.message {
+  font-size: 14px;
+  color: green;
+  margin-top: 20px;
+}
+
+@media (max-width: 1200px) {
+  .footer {
+    font-size: 14px;
+  }
+}
+
+.footer {
+  font-size: 12px;
+}
+
+@media (max-width: 600px) {
+  .footer {
+    font-size: 10px;
+  }
+}

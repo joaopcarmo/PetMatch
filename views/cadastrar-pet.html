@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cadastrar Pet - PetMatch</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../styles/global.css" />
+    <link rel="stylesheet" href="../styles/cadastrar-pet.css" />
+    <style>
+      .error {
+        border-color: red;
+      }
+
+      .error-message {
+        color: red;
+        font-size: 0.875em;
+        margin-top: 5px;
+        display: block;
+      }
+
+      #file-name-display {
+        font-size: 0.875em;
+        color: #555;
+        margin-top: 5px;
+        display: block;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header class="header">
+      <div class="logo-and-title">
+        <a href="menu.html">
+          <img src="../imgs/Design sem nome.svg" alt="Logo" />
+        </a>
+        <h1>PetMatch</h1>
+      </div>
+    </header>
+
+    <div class="back-button">
+      <button onclick="window.location.href='menu.html'">Voltar</button>
+    </div>
+    <div class="box">
+      <div class="main">
+        <h2>Cadastrar Pet</h2>
+        <p>Preencha os dados para cadastrar o seu pet.</p>
+
+        <form id="petForm" novalidate>
+          <div class="form-group">
+            <label for="petImage">Imagem do Pet:</label>
+            <div class="custom-file-upload">
+              <label for="file-upload" class="custom-file-label"
+                >Escolher arquivo</label
+              >
+              <input id="file-upload" type="file" required />
+              <span id="file-name-display"
+                >Selecione um arquivo JPEG ou PNG</span
+              >
+            </div>
+            <span id="file-error" class="error-message"></span>
+          </div>
+          <div class="form-group">
+            <label for="petName">Nome:</label>
+            <input
+              type="text"
+              id="petName"
+              placeholder="Nome do pet"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="petRaca">Raça:</label>
+            <input
+              type="text"
+              id="racaPet"
+              placeholder="Raça do seu pet"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="petDescription">Descrição:</label>
+            <input
+              type="text"
+              id="descricao"
+              placeholder="Adicione uma descrição sobre seu pet"
+              required
+            />
+          </div>
+          <div class="form-group-menor-idade">
+            <label for="petAge">Idade:</label>
+            <input
+              type="number"
+              id="petAge"
+              placeholder="Idade do pet"
+              required
+            />
+          </div>
+          <div class="form-row">
+            <div class="form-group-menor">
+              <label for="petType">Sexo:</label>
+              <select id="petType" required>
+                <option value="">Selecione</option>
+                <option value="macho">Macho</option>
+                <option value="femea">Fêmea</option>
+              </select>
+            </div>
+
+            <div class="form-group-menor">
+              <label for="petFinalidade">Finalidade:</label>
+              <select id="petFinalidade" required>
+                <option value="">Selecione</option>
+                <option value="match">Encontrar o parceiro ideal</option>
+                <option value="adocao">Adoção</option>
+              </select>
+            </div>
+          </div>
+
+          <button type="submit" class="button">Cadastrar</button>
+        </form>
+      </div>
+    </div>
+
+    <footer>
+      <div class="footer">
+        <p>&copy; 2024 PetMatch. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <script src="../src/features/cadastrar.js"></script>
+  </body>
+</html>

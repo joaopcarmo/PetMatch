@@ -1,0 +1,140 @@
+.logged-in-message {
+    font-size: 18px;
+    color: white;
+    font-weight: 600;
+}
+
+.main-content {
+    margin-top: 50px; /* Adicione um espaço superior */
+    text-align: center; /* Centraliza o texto */
+}
+
+.main-content h2 {
+    font-size: 28px;
+    color: #333;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.main-content p {
+    font-size: 18px;
+    color: #666;
+    margin-bottom: 30px;
+    text-align: center;
+}
+ main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: calc(100vh - 150px); 
+    justify-content: center; 
+}
+
+.main-content {
+    margin-top: -300px; 
+}
+
+
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.button {
+    background-color: #D496A7;
+    color: white;
+    padding: 15px 30px;
+    border-radius: 25px;
+    text-decoration: none;
+    border: 1px solid black;
+    font-size: 18px;
+    font-weight: 600;
+    display: inline-block;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+}
+
+.button:hover {
+    background-color: #c38492; /* Muda a cor ao passar o mouse */
+    transform: scale(1.05); /* Aumenta ligeiramente o botão */
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2); /* Aumenta a sombra ao passar o mouse */
+}
+
+
+.back-button button {
+    background-color: #D496A7; /* Cor de fundo */
+    color: white; /* Cor do texto */
+    border: none;
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+    font-family: 'Sora', sans-serif;
+}
+
+.back-button button:hover {
+    background-color: #c38492; /* Efeito hover: altera a cor de fundo */
+    transform: scale(1.05); /* Efeito hover: aumenta ligeiramente o botão */
+}
+
+.back-button {
+    display: flex;
+    justify-content: flex-start; /* Alinha o botão à esquerda */
+    margin: 20px;
+}
+
+.back-button button {
+    background-color: #D496A7; /* Cor de fundo */
+    color: white; /* Cor do texto */
+    border: none;
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+    font-family: 'Sora', sans-serif;
+}
+
+.back-button button:hover {
+    background-color: #c38492; /* Efeito hover: altera a cor de fundo */
+    transform: scale(1.05); /* Efeito hover: aumenta ligeiramente o botão */
+}
+
+.back-button {
+    display: flex;
+    justify-content: flex-start; /* Alinha o botão à esquerda */
+    margin: 20px;
+}
+
+
+@media (max-width: 1200px) {
+   
+    .footer {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 900px) {
+}
+.footer {
+    font-size: 14px;
+}
+@media (max-width: 600px) {
+
+    .buttons {
+        flex-direction: column; /* Coloca os botões em coluna */
+        align-items: center;
+    }
+    a.button {
+        font-size: 14px;
+        padding: 8px 16px;
+        width: 60%; /* Botões mais largos em dispositivos móveis */
+        margin: 10px 0; /* Espaçamento adequado entre os botões */
+    }
+    .footer {
+        font-size: 12px;
+    }
+}

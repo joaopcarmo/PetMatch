@@ -1,0 +1,284 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+/* Card principal */
+.personal-card {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 30px 40px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    width: 100%;
+    text-align: center;
+}
+
+/* Cabeçalho do card */
+.card-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.profile-pic {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+.card-header h2 {
+    font-size: 28px;
+    color: #333;
+    margin: 5px 0;
+}
+
+.card-header .email {
+    font-size: 16px;
+    color: #666;
+    text-decoration: none;
+    margin-top: 5px;
+}
+
+hr {
+    border: none;
+    border-top: 1px solid #ccc;
+    margin: 20px 0;
+}
+
+.card-content {
+    text-align: left;
+    font-size: 18px;
+}
+
+.info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.info p {
+    font-size: 18px;
+    color: #333;
+    font-weight: bold;
+    margin: 0;
+}
+
+.info span {
+    font-size: 16px;
+    color: #666;
+    text-align: right;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.info span a {
+    color: #D496A7;
+    text-decoration: none;
+}
+
+.info span a:hover {
+    text-decoration: underline;
+}
+
+.edit-icon {
+    font-size: 16px;
+    color: #D496A7;
+    cursor: pointer;
+}
+
+.edit-icon:hover {
+    color: #c38492;
+}
+
+.card-footer {
+    margin-top: 30px;
+}
+
+.confirm-button {
+    background-color: #D496A7;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 25px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.confirm-button:hover {
+    background-color: #c38492;
+    transform: scale(1.05);
+}
+
+.logout-button {
+    background-color: #D496A7;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 25px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.logout-button:hover {
+    background-color: #c38492;
+    transform: scale(1.05);
+}
+
+.delete-account-button {
+    background-color: #D496A7;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 25px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.delete-account-button:hover {
+    background-color: #c38492;
+    transform: scale(1.05);
+}
+
+.info span {
+    font-size: 16px;
+    color: #666;
+    text-align: right;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.info span a {
+    color: #D496A7;
+    text-decoration: none;
+}
+
+.info span a:hover {
+    text-decoration: underline;
+}
+
+/* Ícone de edição */
+.edit-icon {
+    font-size: 16px;
+    color: #D496A7;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.edit-icon:hover {
+    color: #c38492;
+}
+
+
+.info span#info-phone {
+    font-size: 16px;
+    color: #666;
+    text-align: right;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+
+.info span#info-city {
+    font-size: 16px;
+    color: #666;
+    text-align: right;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+
+.info span input {
+    font-size: 16px;
+    padding: 8px 12px;
+    border: 2px solid #D496A7;
+    border-radius: 5px;
+    outline: none;
+    width: 100%;
+    box-sizing: border-box;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+
+.divider {
+    border: none;
+    border-top: 2px solid #D496A7;
+    margin: 20px 0;
+}
+
+
+.section-title {
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+    font-family: "Sora", sans-serif;
+}
+
+
+.info span {
+    font-size: 16px;
+    color: #666;
+    text-align: right;
+    display: flex;
+    align-items: center;
+    gap: 5px; 
+}
+
+.info span input,
+.info span select {
+    font-size: 16px;
+    padding: 8px 12px;
+    border: 2px solid #D496A7;
+    border-radius: 5px;
+    outline: none;
+    width: 100%;
+    box-sizing: border-box;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+
+.info span input:focus,
+.info span select:focus {
+    border-color: #c38492;
+    box-shadow: 0 0 5px rgba(211, 150, 167, 0.6);
+}
+
+
+.profile-container {
+    position: relative;
+    display: inline-block;
+    width: 150px;
+    height: 150px;
+    margin: 0 auto;
+}
+
+
+.profile-pic {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    cursor: pointer;
+    transition: filter 0.3s, transform 0.3s;
+}
+
+
+.profile-pic:hover {
+    filter: brightness(0.9);
+    transform: scale(1.05); 
+}

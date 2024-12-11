@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Adote um Pet - PetMatch</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../styles/global.css" />
+    <link rel="stylesheet" href="../styles/adote.css" />
+  </head>
+
+  <body>
+    <header class="header">
+      <div class="logo">
+        <a href="menu.html">
+          <img src="../imgs/Design sem nome.svg" alt="Logo" />
+        </a>
+      </div>
+      <h1>PetMatch</h1>
+    </header>
+
+    <div class="action-buttons">
+      <button class="back-button" onclick="window.location.href='menu.html'">
+        Voltar
+      </button>
+    </div>
+
+    <main class="main">
+      <h2>Adote seu Novo Melhor Amigo!</h2>
+      <p>
+        Aqui você encontra cães adoráveis esperando por uma família. Cada um tem
+        uma história e está ansioso para trazer alegria ao seu lar.
+      </p>
+
+      <div class="pets-section" id="pets-section">
+        <!-- Lista de Animais será gerada dinamicamente -->
+      </div>
+    </main>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const petsSection = document.getElementById("pets-section");
+
+        // Pets fixos para exibição
+        const fixedPets = [
+          {
+            id: "1",
+            name: "Bolinha",
+            race: "Labrador",
+            age: "2 anos",
+            description: "Adorável e amigável.",
+            purpose: "adocao", // Finalidade Adoção
+            image: "../imgs/bolinha.jpg",
+          },
+          {
+            id: "4",
+            name: "Luna",
+            race: "Shih Tzu",
+            age: "3 anos",
+            description: "Pequena e charmosa.",
+            purpose: "adocao", // Finalidade Adoção
+            image: "../imgs/LUNA.jpg",
+          },
+        ];
+
+        // Recuperando pets do localStorage
+        const dynamicPets = JSON.parse(localStorage.getItem("pets")) || [];
+        const allPets = [...fixedPets, ...dynamicPets];
+
+        // Filtra apenas os pets com a finalidade "Adoção"
+        const petsAdocao = allPets.filter((pet) => pet.purpose === "adocao");
+
+        petsSection.innerHTML = ""; // Limpa a seção antes de renderizar
+
+        // Renderiza os pets com a finalidade "Adoção"
+        petsAdocao.forEach((pet) => {
+          const petCard = document.createElement("div");
+          petCard.className = "pet-card";
+          petCard.innerHTML = `
+            <img src="${pet.image}" alt="${pet.name}">
+            <div class="card-content">
+              <h3>${pet.name}</h3>
+              <p><strong>Raça:</strong> ${pet.race}</p>
+              <p><strong>Descrição:</strong> ${pet.description}</p>
+              <p><strong>Idade:</strong> ${pet.age}</p>
+            </div>
+            <div class="card-actions">
+              <a href="adote-action.html?petId=${pet.id}" class="button">Adote</a>
+            </div>
+          `;
+          petsSection.appendChild(petCard);
+        });
+      });
+    </script>
+  </body>
+
+  <footer>
+    <div class="footer">
+      <p>&copy; 2024 PetMatch. All rights reserved.</p>
+    </div>
+  </footer>
+</html>

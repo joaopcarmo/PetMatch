@@ -1,0 +1,70 @@
+body {
+  font-family: "Sora", sans-serif;
+  background-color: #f5d0d7;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  background-color: #d08b96;
+  padding: 10px;
+  display: flex;
+  align-items: start;
+  color: white;
+  margin-bottom: 10px;
+}
+
+.logo-and-title {
+  display: flex;
+  align-items: center;
+  flex: 1; /* Garante que o logo ocupe o máximo de espaço possível */
+}
+
+.logo img {
+  width: 50px;
+  height: auto;
+  max-width: 100%;
+  margin: 14px 10px;
+}
+
+.logo-and-title h1 {
+  margin: 0;
+  font-size: 32px;
+  font-weight: 600;
+}
+
+.back-button button {
+  background-color: #d496a7;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 25px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+  margin: 10px 10px;
+}
+
+.back-button button:hover {
+  background-color: #c38492;
+  transform: scale(1.05);
+}
+
+main {
+  flex: 1; /* Faz o main ocupar o espaço disponível */
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Centraliza verticalmente o conteúdo do main */
+  align-items: center; /* Centraliza horizontalmente o conteúdo */
+}
+
+.footer {
+  background-color: #d496a7;
+  padding: 20px;
+  text-align: center;
+  color: #555;
+  font-weight: 400;
+}

@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Match! - PetMatch</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../styles/global.css" />
+    <link rel="stylesheet" href="../styles/match-action.css" />
+  </head>
+
+  <body>
+    <header class="header">
+      <div class="logo">
+        <a href="menu.html" aria-label="Voltar ao menu principal">
+          <img src="../imgs/Design sem nome.svg" alt="Logo do PetMatch" />
+        </a>
+      </div>
+      <h1>PetMatch</h1>
+    </header>
+
+    <div class="back-button">
+      <button
+        onclick="window.history.back()"
+        aria-label="Voltar para a página anterior"
+      >
+        &#8592; Voltar
+      </button>
+    </div>
+
+    <main class="main">
+      <section class="match-intro">
+        <h2>Match!</h2>
+        <p class="desc">
+          Preencha seus dados e o dono do Pet escolhido receberá uma notificação
+          que vocês deram um match!
+        </p>
+      </section>
+
+      <div class="content">
+        <section
+          class="pets-section"
+          id="pets-section"
+          aria-label="Lista de pets disponíveis para match"
+        ></section>
+
+        <div class="form-container">
+          <form id="petForm">
+            <div class="form-group">
+              <label for="name">Nome</label>
+              <input type="text" id="name" required />
+            </div>
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" id="email" required />
+            </div>
+            <div class="form-group">
+              <label for="phone">Telefone</label>
+              <input type="tel" id="phone" required />
+            </div>
+            <button type="submit">Enviar</button>
+          </form>
+        </div>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <p>&copy; 2024 PetMatch. All rights reserved.</p>
+    </footer>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // Captura o ID do pet da URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const petId = urlParams.get("petId");
+
+        // Recupera os pets fixos e dinâmicos
+        const fixedPets = [
+          {
+            id: "1",
+            name: "Rocky",
+            race: "Labrador",
+            age: "2 anos",
+            description: "Adorável e amigável.",
+            image: "../imgs/rocky.jpg",
+          },
+          {
+            id: "2",
+            name: "Rex",
+            race: "Pastor Alemão",
+            age: "3 anos",
+            description: "Protetor e carinhoso.",
+            image: "../imgs/jack.jpg",
+          },
+          {
+            id: "3",
+            name: "Fido",
+            race: "Bulldog",
+            age: "4 anos",
+            description: "Fiel e leal.",
+            image: "../imgs/daisy.jpg",
+          },
+        ];
+
+        const dynamicPets = JSON.parse(localStorage.getItem("pets")) || [];
+        const allPets = [...fixedPets, ...dynamicPets]; // Combina os pets fixos e dinâmicos
+
+        // Encontra o pet selecionado
+        const selectedPet = allPets.find((pet) => pet.id === petId);
+
+        if (selectedPet) {
+          // Exibe as informações do pet
+          document.getElementById("pets-section").innerHTML = `
+                    <div class="pet-card">
+                        <img src="${selectedPet.image}" alt="${selectedPet.name}">
+                        <div class="card-content">
+                            <h3>${selectedPet.name}</h3>
+                            <p><strong>Raça:</strong> ${selectedPet.race}</p>
+                            <p><strong>Descrição:</strong> ${selectedPet.description}</p>
+                            <p><strong>Idade:</strong> ${selectedPet.age}</p>
+                        </div>
+                        <div class="card-actions">
+                            <button class="favorite-button" onclick="toggleFavorito('${selectedPet.id}', this)">
+                                &#9733;
+                            </button>
+                        </div>
+                    </div>
+                `;
+        } else {
+          alert("Pet não encontrado.");
+        }
+
+        // Função para adicionar/remover favoritos
+        function toggleFavorito(petId, button) {
+          const favoritos = JSON.parse(localStorage.getItem("favoritos")) || [];
+          const pet = allPets.find((p) => p.id === petId);
+
+          if (!pet) {
+            alert("Erro ao localizar o pet.");
+            return;
+          }
+
+          const petIndex = favoritos.findIndex((fav) => fav.id === pet.id);
+
+          if (petIndex === -1) {
+            favoritos.push(pet);
+            button.classList.add("favorited");
+            alert(`${pet.name} foi adicionado aos favoritos!`);
+          } else {
+            favoritos.splice(petIndex, 1);
+            button.classList.remove("favorited");
+            alert(`${pet.name} foi removido dos favoritos!`);
+          }
+
+          localStorage.setItem("favoritos", JSON.stringify(favoritos));
+        }
+
+        window.toggleFavorito = toggleFavorito;
+
+        // Função para enviar o formulário
+        const petForm = document.getElementById("petForm");
+        petForm.addEventListener("submit", function (event) {
+          event.preventDefault();
+
+          const email = document.getElementById("email").value.trim();
+          const name = document.getElementById("name").value.trim();
+          const phone = document.getElementById("phone").value.trim();
+
+          // Exibe o popup com os dados do usuário
+          alert(
+            `Obrigado, ${name}!\n\nAs informações sobre o animal foram enviadas para o email: ${email}.\n\nTelefone de contato: ${phone}.`
+          );
+
+          // Redireciona para a página principal ou outra página após o envio
+          window.location.href = "menu.html";
+        });
+      });
+    </script>
+  </body>
+</html>

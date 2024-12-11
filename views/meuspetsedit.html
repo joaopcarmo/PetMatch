@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Pet - PetMatch</title>
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles/global.css">
+    <link rel="stylesheet" href="../styles/meuspetsedit.css">
+</head>
+
+<body>
+    <header class="header">
+        <div class="logo-and-title">
+            <div class="logo">
+                <a href="menu.html">
+                <img src="../imgs/Design sem nome.svg" alt="Logo">
+            </a>
+            </div>
+            <h1>PetMatch</h1>
+        </div>
+    </header>
+
+    
+
+    <div class="back-button">
+        <button onclick="window.history.back()">&#8592; Voltar</button>
+    </div>
+
+    <main>
+        <div class="container">
+            <h2>Editar Pet</h2>
+            <form id="edit-form">
+                <div class="image-preview">
+                    <img id="current-image" src="#" alt="Imagem do Pet">
+                </div>
+
+                <label for="edit-image">Alterar Imagem:</label>
+                <input type="file" id="edit-image" accept="image/png, image/jpeg">
+
+                <label for="edit-name">Nome:</label>
+                <input type="text" id="edit-name" placeholder="Nome" maxlength="30" required>
+
+                <label for="edit-race">Raça:</label>
+                <input type="text" id="edit-race" placeholder="Raça" maxlength="41" required>
+
+                <label for="edit-description">Descrição:</label>
+                <textarea id="edit-description" placeholder="Descrição" maxlength="85" required></textarea>
+
+                <label for="edit-age">Idade:</label>
+                <input type="number" id="edit-age" placeholder="Idade" min="0" required>
+
+                <div class="form-row">
+                    <div class="form-group-menor">
+                        <label for="edit-type">Sexo:</label>
+                        <select id="edit-type" required>
+                            <option value="Macho">Macho</option>
+                            <option value="Fêmea">Fêmea</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group-menor">
+                        <label for="edit-purpose">Finalidade:</label>
+                        <select id="edit-purpose" required>
+                            <option value="match">Encontrar o parceiro ideal</option>
+                            <option value="adocao">Adoção</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="buttons">
+                    <button type="button" class="cancel-button" onclick="cancelEdit()">Cancelar</button>
+                    <button type="button" class="save-button" onclick="saveEdit()">Salvar</button>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <div class="popup" id="popup">
+        <div class="popup-message">Por favor, preencha todos os campos obrigatórios.</div>
+        <button onclick="closePopup()">OK</button>
+    </div>
+
+    <footer class="footer">
+        <p>&copy; 2024 PetMatch. All rights reserved.</p>
+    </footer>
+
+    <script src="../src/features/meuspetsedit.js"></script>
+</body>
+
+</html>

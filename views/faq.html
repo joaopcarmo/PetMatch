@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ - PetMatch</title>
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles/global.css">
+    <link rel="stylesheet" href="../styles/faq.css">
+</head>
+
+<body>
+    <header class="header">
+        <div class="logo-and-title">
+            <img src="../imgs/Design sem nome.svg" alt="Logo">
+            <h1>PetMatch</h1>
+        </div>
+    </header>
+    <div class="back-button">
+        <button onclick="window.location.href='menu.html'">Voltar</button>
+    </div>
+    <main class="main">
+        
+        <div class="container">
+            <h1>Dúvidas Frequentes</h1>
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>1. Como cadastrar um pet para adoção ou para matchmaking?</span>
+                    <span class="faq-toggle">▼</span>
+                </div>
+                <div class="faq-answer">
+                    Para cadastrar seu pet, basta acessar a seção "Cadastrar Pet", preencher os dados solicitados e enviar a foto do seu pet. Em poucos minutos, seu pet estará disponível para adoção ou matchmaking!
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>2. Como funciona a busca de pets no PetMatch?</span>
+                    <span class="faq-toggle">▼</span>
+                </div>
+                <div class="faq-answer">
+                    No PetMatch, você pode buscar pets utilizando filtros como espécie, idade, localização e finalidade (adoção ou matchmaking). Acesse a seção "Buscar Pets", escolha os filtros e explore os perfis disponíveis!
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>3. O que acontece se um pet que me interessa for adicionado recentemente?</span>
+                    <span class="faq-toggle">▼</span>
+                </div>
+                <div class="faq-answer">
+                    Você pode ativar as notificações para receber alertas sobre novos pets cadastrados. Assim, sempre que um pet que atenda aos seus critérios for adicionado, você será informado diretamente pelo aplicativo.
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>4. Posso modificar ou excluir o meu cadastro de pet?</span>
+                    <span class="faq-toggle">▼</span>
+                </div>
+                <div class="faq-answer">
+                    Sim! Basta acessar a seção "Meus Pets" e escolher o pet que deseja editar ou excluir. Lá você poderá alterar qualquer informação do cadastro ou remover o pet da plataforma.
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>5. Como garantir que um pet será adotado rapidamente?</span>
+                    <span class="faq-toggle">▼</span>
+                </div>
+                <div class="faq-answer">
+                    Além de preencher todas as informações corretamente, uma boa foto do seu pet ajuda muito! Quanto mais detalhes sobre a personalidade e as necessidades do seu pet você fornecer, melhor será a experiência de quem está buscando um novo amigo.
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>6. O que significa a "finalidade" de um pet no cadastro?</span>
+                    <span class="faq-toggle">▼</span>
+                </div>
+                <div class="faq-answer">
+                    A "finalidade" é uma forma de indicar se o pet está disponível para adoção ou para encontrar um parceiro para reprodução (no caso de animais que estão buscando um companheiro de mesma espécie).
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>7. Posso cadastrar mais de um pet no PetMatch?</span>
+                    <span class="faq-toggle">▼</span>
+                </div>
+                <div class="faq-answer">
+                    Sim, você pode cadastrar quantos pets desejar. Basta preencher o formulário de cadastro para cada pet que deseja disponibilizar para adoção ou matchmaking.
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>8. Onde posso encontrar informações sobre boas práticas para adoção e matchmaking?</span>
+                    <span class="faq-toggle">▼</span>
+                </div>
+                <div class="faq-answer">
+                    Você pode fazer o download de um PDF com dicas e boas práticas na seção "Recursos". Esse documento contém informações valiosas para garantir uma experiência segura e positiva para você e seu novo amigo de quatro patas.
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div class="footer">
+            <p>&copy; 2024 PetMatch. All rights reserved.</p>
+        </div>
+    </footer>
+    <script>
+        document.querySelectorAll('.faq-question').forEach((question) => {
+            question.addEventListener('click', () => {
+                const answer = question.nextElementSibling;
+                const toggle = question.querySelector('.faq-toggle');
+
+                // Alterna a visibilidade da resposta
+                answer.style.display = answer.style.display === 'block' ? 'none' : 'block';
+
+                // Alterna a classe de rotação
+                toggle.classList.toggle('open');
+            });
+        });
+    </script>
+</body>
+
+</html>

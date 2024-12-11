@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Configurações Pessoais - PetMatch</title>
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles/global.css">
+    <link rel="stylesheet" href="../styles/configs-pessoal.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+    <header class="header">
+        <div class="logo-and-title">
+            <img src="../imgs/Design sem nome.svg" alt="Logo">
+            <h1>PetMatch</h1>
+        </div>
+    </header>
+
+    <div class="back-button">
+        <button onclick="window.location.href='menu.html'">Voltar</button>
+    </div>
+
+    <main>
+        <div class="container">
+            <div class="personal-card">
+                <div class="card-header">
+                    <div class="profile-container">
+                        <img src="../imgs/icone Login.svg" alt="User Photo" class="profile-pic" id="profile-pic">
+                        <input type="file" id="photo-input" accept="image/png, image/jpeg" style="display: none;">
+                    </div>
+                    <h2 id="user-name">Carregando...</h2>
+                    <a href="#" id="user-email" class="email">Carregando...</a>
+                </div>
+                <hr class="divider" >
+                <div class="card-content">
+                    <div class="info">
+                        <p>Nome</p>
+                        <span id="info-name">Carregando... <i class="fa fa-pencil edit-icon"></i></span>
+                    </div>
+                    <div class="info">
+                        <p>Email</p>
+                        <span id="info-email">Carregando... <i class="fa fa-pencil edit-icon"></i></span>
+                    </div>
+                    <div class="info">
+                        <p>Número</p>
+                        <span id="info-phone" >adicionar número<i class="fa fa-pencil edit-icon"></i></span>
+                    </div>
+                    <div class="info">
+                        <p>Cidade</p>
+                        <span id="info-city">Belo Horizonte <i class="fa fa-pencil edit-icon"></i></span>
+                    </div>
+                </div>
+                <hr class="divider">
+        <p class="section-title">Preferências de Pet</p>
+        <div class="preferences-content">
+            <div class="info">
+                <p>Intuito</p>
+                <span id="info-intent">Adoção <i class="fa fa-pencil edit-icon"></i></span>
+            </div>
+            <div class="info">
+                <p>Sexo</p>
+                <span id="info-gender">Ambos <i class="fa fa-pencil edit-icon"></i></span>
+            </div>
+            <div class="info">
+                <p>Raça</p>
+                <span id="info-breed">Indefinida <i class="fa fa-pencil edit-icon"></i></span>
+            </div>
+            <div class="info">
+                <p>Idade</p>
+                <span id="info-age">Sem preferência <i class="fa fa-pencil edit-icon"></i></span>
+            </div>
+
+        </div>
+                <div class="card-footer">
+                <div class="card-footer">
+                    <button class="confirm-button">Confirmar</button>
+                    <button class="logout-button">Sair</button>
+                    <button class="delete-account-button">Excluir Conta</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer">
+            <p>&copy; 2024 PetMatch. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="../src/auth/signup.js"></script>
+    <script src="../src/utils/personalInfo.js"></script>
+</body>
+
+</html>

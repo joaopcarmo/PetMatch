@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - PetMatch</title>
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles/global.css">
+    <link rel="stylesheet" href="../styles/login.css">
+</head>
+
+<body>
+
+    <header class="header">
+        <div class="logo-and-title">
+            <a href="menu.html">
+                <img src="../imgs/Design sem nome.svg" alt="Logo">
+            </a>
+            <h1>PetMatch</h1>
+        </div>
+    </header>
+
+    <div class="login-container">
+        <div class="login-icon">
+            <img src="../imgs/icone Login.svg" alt="User Icon">
+        </div>
+        <div id="loginSection">
+            <h2>Login</h2>
+        </div>
+
+        <div class="login-form-container">
+            <form id="loginForm">
+                <div class="input-group">
+                    <input type="text" placeholder="Email" name="username" id="loginUsername" required>
+                </div>
+                <div class="input-group">
+                    <input type="password" placeholder="Senha" name="password" id="loginPassword" required>
+                </div>
+                <!-- Link Esqueci a Senha -->
+                <div class="forgot-password-link">
+                    <a href="forgot-password.html">Esqueci a senha</a>
+                </div>
+                <div class="login-buttons">
+                    <button type="submit" class="login-btn">Entrar</button>
+                </div>
+                <div class="login-buttons">
+                    <button type="button" class="signup-btn" onclick="window.location.href='signup.html';">Voltar para cadastro</button>
+                </div>
+            </form>
+            <p id="loginMessage" style="color:green;"></p> <!-- Mensagem de sucesso ou erro -->
+        </div>
+    </div>
+
+    <script src="../src/auth/login.js"></script>
+
+</body>
+<footer>
+    <div class="footer">
+        <p>&copy; 2024 PetMatch. All rights reserved.</p>
+    </div>
+</footer>
+
+</html>

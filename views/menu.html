@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu - PetMatch</title>
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles/global.css">
+    <link rel="stylesheet" href="../styles/menu.css">
+</head>
+
+<body>
+
+    <header class="header">
+        <div class="logo-and-title">
+            <img src="../imgs/Design sem nome.svg" alt="Logo">
+            <h1>PetMatch</h1>
+        </div>
+        <div class="login-section" id="loginSection">
+            <!-- Link de login redirecionando para signup.html -->
+            <a href="./signup.html" class="login-link" id="loginLink">
+                <img src="../imgs/icone Login.svg" alt="Login" id="loginIcon">
+                <span id="loginText">Sign-in/Login</span>
+            </a>
+            <!-- Botão de perfil para conta.html, exibido apenas se o usuário estiver logado -->
+            <a href="conta.html" id="userProfile" class="user-profile" style="display: none;">
+                <img src="../imgs/icone Login.svg" alt="User Icon">
+            </a>
+            <!-- Botão de logout, inicialmente escondido -->
+            <button id="logoutButton" class="logout-btn" style="display: none;">Sair da conta</button>
+        </div>
+    </header>
+
+    <div class="main">
+        <h2>PetMatch</h2>
+        <p>Conectando pessoas e animais, buscando seu parceiro ideal.</p>
+        <div class="buttons">
+            <a href="adote.html" class="button">Adote</a>
+            <a href="match.html" class="button">Forme um Casal</a>
+            <a href="cadastrar-pet.html" class="button">Cadastrar PET</a>
+            <a href="dicas.html" class="button">Dicas</a>
+            <a href="faq.html" class="button">FAQ</a>
+            <a href="faleconosco.html" class="button">Fale Conosco!</a>
+        </div>
+    </div>
+
+    <!-- Pop-up de Avaliação -->
+    <div id="ratingPopup" class="rating-popup" style="display: none;">
+        <div class="popup-content">
+            <h3>Avalie nosso aplicativo</h3>
+            <div class="stars">
+                <span class="star" data-rating="1">&#9733;</span>
+                <span class="star" data-rating="2">&#9733;</span>
+                <span class="star" data-rating="3">&#9733;</span>
+                <span class="star" data-rating="4">&#9733;</span>
+                <span class="star" data-rating="5">&#9733;</span>
+            </div>
+            <button id="submitRating">Enviar Avaliação</button>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer">
+            <p>&copy; 2024 PetMatch. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="../src/auth/logout.js"></script>
+    <script src="../src/auth/menu.js"></script>
+
+    <script>
+        // Quando a página menu.html for acessada, armazena o tempo
+        if (window.location.pathname.includes("menu.html")) {
+            sessionStorage.setItem("ratingPopupTime", Date.now());
+        }      
+    </script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const isLoggedIn = localStorage.getItem("isLoggedIn");
+
+        // Verifica se o usuário está logado
+        if (isLoggedIn === "true") {
+            // Oculta o link de login e exibe o botão de logout e o botão de perfil
+            document.getElementById("loginLink").style.display = "none";
+            document.getElementById("logoutButton").style.display = "block";
+            document.getElementById("userProfile").style.display = "block";
+        } else {
+            // Exibe o link de login e oculta os botões de logout e perfil
+            document.getElementById("loginLink").style.display = "block";
+            document.getElementById("logoutButton").style.display = "none";
+            document.getElementById("userProfile").style.display = "none";
+        }
+    });
+</script>
+</body>
+
+</html>

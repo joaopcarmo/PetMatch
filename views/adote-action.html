@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Formulário Adoção - PetMatch</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../styles/global.css" />
+    <link rel="stylesheet" href="../styles/match-action.css" />
+  </head>
+
+  <body>
+    <header class="header">
+      <div class="logo">
+        <a href="menu.html">
+          <img src="../imgs/Design sem nome.svg" alt="Logo do PetMatch" />
+        </a>
+      </div>
+      <h1>PetMatch</h1>
+    </header>
+
+    <div class="back-button">
+      <button onclick="window.history.back()">&#8592; Voltar</button>
+    </div>
+
+    <main class="main">
+      <section class="match-intro">
+        <h2>Adote um pet!</h2>
+        <p>
+          Preencha seus dados e o dono do Pet receberá uma notificação do seu
+          interesse.
+        </p>
+      </section>
+
+      <div class="content">
+        <section class="pets-section" id="pets-section"></section>
+        <div class="form-container">
+          <form id="petForm">
+            <div class="form-group">
+              <label for="name">Nome</label>
+              <input type="text" id="name" placeholder="Seu nome" required />
+            </div>
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" id="email" placeholder="Seu email" required />
+            </div>
+            <div class="form-group">
+              <label for="phone">Telefone</label>
+              <input
+                type="tel"
+                id="phone"
+                placeholder="Seu telefone"
+                required
+              />
+            </div>
+            <button type="submit">Enviar</button>
+          </form>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <p>&copy; 2024 PetMatch. All rights reserved.</p>
+    </footer>
+
+    <script>
+      function getQueryParam(param) {
+        const urlParams = new URLSearchParams(window.location.search);
+        return urlParams.get(param);
+      }
+
+      function renderSelectedPet() {
+        const petId = getQueryParam("petId");
+
+        const fixedPets = [
+          {
+            id: "1",
+            name: "Bolinha",
+            race: "Labrador",
+            age: "2 anos",
+            description: "Adorável e amigável.",
+            image: "../imgs/bolinha.jpg",
+          },
+          {
+            id: "4",
+            name: "Luna",
+            race: "Shih Tzu",
+            age: "3 anos",
+            description: "Pequena e charmosa.",
+            image: "../imgs/LUNA.jpg",
+          },
+        ];
+
+        const dynamicPets = JSON.parse(localStorage.getItem("pets")) || [];
+        const allPets = [...fixedPets, ...dynamicPets];
+
+        const selectedPet = allPets.find((pet) => pet.id === petId);
+        const container = document.getElementById("pets-section");
+
+        if (selectedPet) {
+          container.innerHTML = `
+            <div class="pet-card">
+              <img src="${selectedPet.image}" alt="${selectedPet.name}">
+              <div class="info">
+                <h3>${selectedPet.name}</h3>
+                <p><strong>Raça:</strong> ${selectedPet.race}</p>
+                <p><strong>Descrição:</strong> ${selectedPet.description}</p>
+                <p><strong>Idade:</strong> ${selectedPet.age}</p>
+              </div>
+            </div>`;
+        } else {
+          container.innerHTML = "<p>Pet não encontrado.</p>";
+        }
+      }
+
+      function handleFormSubmit(event) {
+        event.preventDefault();
+
+        // Obtem os valores dos campos do formulário
+        const email = document.getElementById("email").value.trim();
+        const name = document.getElementById("name").value.trim();
+        const phone = document.getElementById("phone").value.trim();
+
+        // Exibe o popup
+        alert(
+          `Obrigado, ${name}!\n\nAs informações sobre o animal foram enviadas para o email: ${email}.\n\nTelefone de contato: ${phone}.`
+        );
+
+        // Opcional: Redirecionar para outra página ou limpar o formulário
+        window.location.href = "menu.html";
+      }
+
+      document.addEventListener("DOMContentLoaded", function () {
+        renderSelectedPet();
+
+        const petForm = document.getElementById("petForm");
+        petForm.addEventListener("submit", handleFormSubmit);
+      });
+    </script>
+  </body>
+  <footer>
+    <div class="footer">
+      <p>&copy; 2024 PetMatch. All rights reserved.</p>
+    </div>
+  </footer>
+</html>

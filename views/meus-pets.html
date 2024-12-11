@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meus Pets - PetMatch</title>
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles/global.css">
+    <link rel="stylesheet" href="../styles/seus-pets.css">
+    <style>
+        .header-buttons {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            margin-bottom: 20px;
+        }
+
+        .header-buttons .new-pet-button button {
+            padding: 12px 20px;
+            background-color: #D08B96;
+            color: #fff;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        .header-buttons .new-pet-button button:hover {
+            background-color: #c07885;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        <div class="logo">
+            <a href="menu.html">
+            <img src="../imgs/Design sem nome.svg" alt="Logo">
+        </a>
+        </div>
+        <h1>PetMatch</h1>
+    </header>
+
+    <div class="header-buttons">
+        <div class="back-button">
+            <button onclick="window.history.back()">&#8592; Voltar</button>
+        </div>
+        <div class="new-pet-button">
+            <button onclick="window.location.href='../views/cadastrar-pet.html'">Cadastrar Novo Pet</button>
+        </div>
+    </div>
+
+    <div class="main">
+        <h2>Meus Pets</h2>
+        <div class="pets-section" id="pets-section">
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer">
+            <p>&copy; 2024 PetMatch. All rights reserved.</p>
+        </div>
+    </footer>
+    <script src="../src/utils/dados.js"></script>
+    <script src="/src/features/scriptCards.js"></script>
+</body>
+
+</html>
