@@ -1,20 +1,8 @@
-# PetMatch
+# PetMatch: Plataforma de Conexão entre Pessoas e Animais
 
-**PetMatch** é uma plataforma que conecta pessoas com animais, permitindo que os usuários adotem um pet ou formem casais de animais. Além disso, os usuários podem cadastrar seus pets e gerenciar suas informações através de uma interface simples e intuitiva.
+PetMatch é uma plataforma inovadora criada para o Trabalho Interdisciplinar do 4º período do curso de Análise e Desenvolvimento de Sistemas (ADS) da PUC Minas Barreiro. Desenvolvido com as tecnologias HTML, CSS e JavaScript, o projeto visa facilitar a adoção de animais de estimação e a formação de casais de pets, promovendo o bem-estar dos animais e aproximando-os de novos lares.
 
-## Funcionalidades
-
-- **Cadastro de Pets**: Permite aos usuários cadastrar informações sobre seus pets, como nome, idade, tipo de animal e uma imagem.
-- **Configurações do Usuário**: Possibilita ao usuário alterar suas informações pessoais, como nome e e-mail.
-- **Exibição de Pets Cadastrados**: Os pets cadastrados pelos usuários podem ser visualizados na seção de "Dados do Pet".
-- **Login e Autenticação**: Usuários devem estar logados para acessar certas funcionalidades, como o cadastro de pets.
-
-## Tecnologias Utilizadas
-
-- **HTML5**: Para a estrutura do projeto.
-- **CSS3**: Utilizado para estilização e layout, incluindo o uso da fonte *Sora* e uma paleta de cores personalizada.
-- **JavaScript**: Implementado para a manipulação de dados, interação do usuário e armazenamento local via `localStorage`.
-
+A plataforma oferece uma interface simples e intuitiva, permitindo que os usuários adotem pets ou cadastrem seus animais para interação com outros donos. Além disso, os donos podem gerenciar as informações de seus pets de maneira prática e eficiente. PetMatch foi projetado para ser uma solução acessível e eficiente para quem deseja melhorar a vida de um animal ou proporcionar novas amizades aos seus pets.
 
 
 
