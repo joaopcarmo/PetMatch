@@ -1,9 +1,30 @@
 {
-    "rewrites": [
-      {
-        "source": "/(.*)",
-        "destination": "/views/$1"
-      }
-    ]
-  }
-  
+  "builds": [
+    {
+      "src": "views/**/*",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "styles/**/*",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "imgs/**/*",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "src/**/*",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "docs/**/*",
+      "use": "@vercel/static"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "/views/$1"
+    }
+  ]
+}
