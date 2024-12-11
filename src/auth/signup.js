@@ -23,10 +23,10 @@ document.getElementById("signupForm").addEventListener("submit", function(event)
         document.getElementById("signupMessage").innerText = "Conta criada com sucesso!";
         document.getElementById("signupMessage").style.color = "green";
 
-        // Redireciona para a página index.html após 2 segundos
+        // Redireciona para a página ../index.html após 2 segundos
         // biome-ignore lint/complexity/useArrowFunction: <explanation>
                 setTimeout(function() {
-            window.location.href = "index.html";
+            window.location.href = "../index.html";
         }, 2000);
     }
 });
