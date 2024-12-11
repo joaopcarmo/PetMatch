@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
             return;
         }
 
+        // biome-ignore lint/complexity/noForEach: <explanation>
         favoritos.forEach(favorito => {
             const petCard = document.createElement("div");
             petCard.className = "pet-card";
