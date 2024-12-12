@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", () => {
         if (ratingPopup) {
             ratingPopup.style.display = "flex"; // Mostra o pop-up
         }
-    }, 20000); // 1 minuto
+    }, 50000); 
 
     // Lógica de seleção de estrelas
     const stars = document.querySelectorAll(".star");
