@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", function() {
             localStorage.removeItem("isLoggedIn");
 
             // Redireciona para a página de cadastro (signup.html)
-            window.location.href = "signup.html";
+            window.location.href = "./signup.html";
         });
     }
 });
